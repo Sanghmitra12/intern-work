@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>TechNova - Innovative Solutions for Tomorrow</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/@fontsgoogle/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <style>
+     body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+      color: #23272f;
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.95);
+      transition: border-bottom 0.3s;
+    }
+    .btn-animated {
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    .btn-animated:hover, .btn-animated:focus {
+      background: #6366f1;
+      color: #fff;
+      box-shadow: 0 4px 24px 0 rgba(99,102,241,0.15);
+      transform: translateY(-2px) scale(1.03);
+    }
+    /* Animations & Effects */
+    .feature:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.10);
+    }
+    .input-error {
+      border-color: #ef4444 !important;
+      background-color: #fee2e2 !important;
+    }
+    /* For PDF Export: Avoid scrollbars by ensuring sections stack naturally */
+     html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    /* Hide number input arrows for contact form on Chrome, Safari, Edge, Opera */
+     input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type='number'] {
+      -moz-appearance: textfield;
+    } 
+      </style>
+</head>
+<body>
+  <!-- Sticky Navbar -->
+  <nav class="sticky-nav border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a class="flex items-center text-indigo-600 font-bold text-2xl tracking-wide" href="#">
+        <i class="fas fa-rocket mr-2 text-indigo-500"></i> TechNova
+      </a>
+      <ul class="hidden md:flex space-x-7 font-medium">
+        <li><a href="#features" class="text-gray-700 hover:text-indigo-600 transition">Features</a></li>
+        <li><a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a></li>
+        <li><a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-animated bg-indigo-600 text-white px-4 py-2 rounded shadow ml-2 hover:bg-indigo-700 transition md:inline-block hidden">
+        Get Started
+      </a>
+      <button id="mobile-nav-toggle" class="md:hidden flex items-center text-gray-700 focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" class="md:hidden hidden bg-white px-4 pb-3 w-full border-t border-gray-100">
+      <ul class="flex flex-col space-y-2 font-medium">
+        <li><a href="#features" class="text-gray-700 hover:text-indigo-600 transition">Features</a></li>
+        <li><a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a></li>
+        <li><a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a></li>
+        <li><a href="#contact" class="btn-animated bg-indigo-600 text-white px-4 py-2 rounded shadow mt-1 block text-center hover:bg-indigo-700">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:space-x-10 justify-between">
+    <div class="flex-1 text-center md:text-left mb-10 md:mb-0">
+      <h1 class="text-4xl md:text-5xl font-bold mb-5 leading-tight tracking-tight">
+        Innovating The <span class="text-indigo-600">Future</span> Of Tech <br class="hidden md:inline-block" />
+        <span class="text-gray-700">with AI-driven Solutions</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-7">
+        TechNova empowers startups and enterprises with next-generation software, cloud, and AI-powered solutions that drive transformation and sustainable growth.
+      </p>
+      <a href="#contact" class="btn-animated bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition inline-block">
+        Request a Demo <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+      <div class="mt-5 space-x-3 text-gray-400 text-sm">
+        <i class="fab fa-aws"></i>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-google"></i>
+        <i class="fab fa-microsoft"></i>
+         <i class="fab fa-linux"></i>
+      </div>
+    </div>
+    <div class="flex-1 flex items-center justify-center">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" loading="lazy" alt="TechNova hero" class="rounded-2xl w-96 max-w-full shadow-xl border border-indigo-100" />
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-10 tracking-tight">Key Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="feature bg-white border border-indigo-50 rounded-2xl p-7 transition-transform duration-200 shadow hover:shadow-xl text-center">
+        <div class="flex items-center justify-center mb-4 text-indigo-600 text-3xl">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-2">AI-Driven Insights</h3>
+        <p class="text-gray-600">Turn complex data into actionable intelligence with cutting-edge machine learning algorithms.</p>
+      </div>
+      <div class="feature bg-white border border-indigo-50 rounded-2xl p-7 transition-transform duration-200 shadow hover:shadow-xl text-center">
+        <div class="flex items-center justify-center mb-4 text-indigo-600 text-3xl">
+          <i class="fas fa-cloud"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-2">Cloud Native</h3>
+        <p class="text-gray-600">Scale and deploy rapidly using secure, reliable, cloud-native architecture and DevOps best practices.</p>
+      </div>
+      <div class="feature bg-white border border-indigo-50 rounded-2xl p-7 transition-transform duration-200 shadow hover:shadow-xl text-center">
+        <div class="flex items-center justify-center mb-4 text-indigo-600 text-3xl">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="font-bold text-xl mb-2">Enterprise Security</h3>
+        <p class="text-gray-600">Protect your data and users with robust, industry-leading security protocols and compliance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" loading="lazy" alt="About TechNova" class="rounded-2xl w-full shadow-lg border border-indigo-100" />
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mb-5">About TechNova</h2>
+        <p class="text-gray-600 text-lg mb-4">
+          Founded by industry veterans and passionate technologists, TechNova delivers innovative cloud and AI software tailored for the unique needs of modern businesses. Our solutions simplify complexity and enable clients to achieve extraordinary digital transformation at scale.
+        </p>
+        <ul class="mt-3 text-gray-700 space-y-1">
+          <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Custom AI & Software Development</li>
+          <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> DevOps Automation</li>
+          <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Cybersecurity & Compliance</li>
+          <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> 24/7 Technical Support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="max-w-2xl mx-auto px-4 py-14">
+    <div class="bg-white rounded-2xl shadow-xl border border-indigo-50 p-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center">Contact Us</h2>
+      <p class="text-gray-600 mb-6 text-center">Ready to accelerate your business? Let’s connect and build the future together.</p>
+      <form id="contactForm" autocomplete="off" novalidate>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="block text-gray-700 mb-1">Name <span class="text-red-500">*</span></label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none transition" placeholder="Your Name">
+            <span id="error-name" class="text-xs text-red-500 hidden">Please enter your name.</span>
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none transition" placeholder="name@email.com">
+            <span id="error-email" class="text-xs text-red-500 hidden">Enter a valid email address.</span>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label for="message" class="block text-gray-700 mb-1">Message <span class="text-red-500">*</span></label>
+          <textarea id="message" name="message" rows="4" required
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none transition resize-none"
+            placeholder="Tell us about your project or inquiry"></textarea>
+          <span id="error-message" class="text-xs text-red-500 hidden">Message must be at least 10 characters.</span>
+        </div>
+        <button type="submit" class="btn-animated bg-indigo-600 text-white font-semibold px-6 py-2 mt-6 rounded-full shadow-lg transition block w-full text-lg hover:bg-indigo-700">
+          Send Message <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+        <div id="form-success" class="text-green-600 font-semibold mt-4 hidden flex items-center justify-center"><i class="fas fa-check-circle mr-1"></i>Thank you! We'll get in touch soon.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-6 py-6 px-4 bg-gradient-to-r from-indigo-50 via-white to-indigo-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <span class="font-bold text-indigo-600">TechNova</span>
+        <span class="text-gray-400 mx-1">|</span>
+        <span class="text-gray-500 text-sm">&copy; 2024 TechNova. All rights reserved.</span>
+      </div>
+      <div class="mt-3 md:mt-0 flex space-x-4 text-gray-400 text-xl">
+        <a href="#"><i class="fab fa-linkedin hover:text-indigo-600"></i></a>
+        <a href="#"><i class="fab fa-twitter hover:text-indigo-600"></i></a>
+        <a href="#"><i class="fab fa-github hover:text-indigo-600"></i></a>
+        <a href="#"><i class="fas fa-envelope hover:text-indigo-600"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav Script & Form Validation -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNavToggle.addEventListener('click', function() {
+      if(mobileNav.classList.contains('hidden')) {
+        mobileNav.classList.remove('hidden');
+      } else {
+        mobileNav.classList.add('hidden');
+      }
+    });
+    // Close mobile nav on link click
+    Array.from(mobileNav.querySelectorAll('a')).forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+      });
+    });
+
+    // Contact Form Validation
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      let hasError = false;
+      // Name
+      const nameEl = form.name;
+      const errorName = document.getElementById('error-name');
+      if (!nameEl.value.trim()) {
+        nameEl.classList.add('input-error');
+        errorName.classList.remove('hidden');
+        hasError = true;
+      } else {
+        nameEl.classList.remove('input-error');
+        errorName.classList.add('hidden');
+      }
+      // Email
+      const emailEl = form.email;
+      const errorEmail = document.getElementById('error-email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailEl.value.trim())) {
+        emailEl.classList.add('input-error');
+        errorEmail.classList.remove('hidden');
+        hasError = true;
+      } else {
+        emailEl.classList.remove('input-error');
+        errorEmail.classList.add('hidden');
+      }
+      // Message
+      const msgEl = form.message;
+      const errorMsg = document.getElementById('error-message');
+      if (!msgEl.value.trim() || msgEl.value.trim().length < 10) {
+        msgEl.classList.add('input-error');
+        errorMsg.classList.remove('hidden');
+        hasError = true;
+      } else {
+        msgEl.classList.remove('input-error');
+        errorMsg.classList.add('hidden');
+      }
+      // On Error: Prevent Submission
+      if(hasError) {
+        e.preventDefault();
+      } else {
+        e.preventDefault();
+        // Simulate submission success
+        document.getElementById('form-success').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('form-success').classList.add('hidden');
+          form.reset();
+        }, 3500);
+      }
+    });
+  </script>
+</body>
+</html>
+
